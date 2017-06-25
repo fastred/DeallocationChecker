@@ -28,7 +28,7 @@ extension UIViewController {
             let type = type(of: self)
             let disappearanceSource: String = isMovingFromParentViewController ? "removed from its parent" : "dismissed"
 
-            DispatchQueue.global().asyncAfter(deadline: .now() + delay, execute: { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak self] in
                 assert(self == nil, "\(type) not deallocated after being \(disappearanceSource)")
             })
         }
