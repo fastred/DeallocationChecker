@@ -19,19 +19,21 @@ extension UIViewController {
     /// - Parameter delay: Delay after which the check if a
     ///                    view controller got deallocated is performed
     public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
-        let rootParentViewController = dch_rootParentViewController
+        #if DEBUG
+            let rootParentViewController = dch_rootParentViewController
 
-        // We don't check `isBeingDismissed` simply on this view controller because it's common
-        // to wrap a view controller in another view controller (e.g. a stock UINavigationController)
-        // and present the wrapping view controller instead.
-        if isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
-            let type = type(of: self)
-            let disappearanceSource: String = isMovingFromParentViewController ? "removed from its parent" : "dismissed"
+            // We don't check `isBeingDismissed` simply on this view controller because it's common
+            // to wrap a view controller in another view controller (e.g. a stock UINavigationController)
+            // and present the wrapping view controller instead.
+            if isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
+                let type = type(of: self)
+                let disappearanceSource: String = isMovingFromParentViewController ? "removed from its parent" : "dismissed"
 
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak self] in
-                assert(self == nil, "\(type) not deallocated after being \(disappearanceSource)")
-            })
-        }
+                DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak self] in
+                    assert(self == nil, "\(type) not deallocated after being \(disappearanceSource)")
+                })
+            }
+        #endif
     }
 
     private var dch_rootParentViewController: UIViewController {
