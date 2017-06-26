@@ -18,7 +18,7 @@ extension UIViewController {
     /// **You should call this method only from UIViewController.viewDidDisappear(_:).**
     /// - Parameter delay: Delay after which the check if a
     ///                    view controller got deallocated is performed
-    public func dch_checkDeallocation(afterDelay delay: TimeInterval = 5.0) {
+    public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
         let rootParentViewController = dch_rootParentViewController
 
         // We don't check `isBeingDismissed` simply on this view controller because it's common
