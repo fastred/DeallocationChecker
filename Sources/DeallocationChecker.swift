@@ -36,6 +36,16 @@ extension UIViewController {
         #endif
     }
 
+    @objc(dch_checkDeallocation)
+    public func objc_dch_checkDeallocation() {
+        self.dch_checkDeallocation()
+    }
+
+    @objc(dch_checkDeallocationAfterDelay:)
+    public func objc_dch_checkDeallocation(delay: TimeInterval) {
+        self.dch_checkDeallocation(afterDelay: delay)
+    }
+
     private var dch_rootParentViewController: UIViewController {
         var root = self
 
