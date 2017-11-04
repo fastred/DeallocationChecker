@@ -18,6 +18,7 @@ extension UIViewController {
     /// **You should call this method only from UIViewController.viewDidDisappear(_:).**
     /// - Parameter delay: Delay after which the check if a
     ///                    view controller got deallocated is performed
+    @objc(dch_checkDeallocationAfterDelay:)
     public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
         #if DEBUG
             let rootParentViewController = dch_rootParentViewController
@@ -39,11 +40,6 @@ extension UIViewController {
     @objc(dch_checkDeallocation)
     public func objc_dch_checkDeallocation() {
         self.dch_checkDeallocation()
-    }
-
-    @objc(dch_checkDeallocationAfterDelay:)
-    public func objc_dch_checkDeallocation(delay: TimeInterval) {
-        self.dch_checkDeallocation(afterDelay: delay)
     }
 
     private var dch_rootParentViewController: UIViewController {
