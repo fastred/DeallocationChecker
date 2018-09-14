@@ -25,9 +25,6 @@ At this point we can simply open the [Memory Graph Debugger](https://developer.a
 
 Add the line `pod "DeallocationChecker"` to your `Podfile`
 
-### Carthage
-Add the line `github "fastred/DeallocationChecker"` to your `Cartfile`
-
 ## Author
 
 Project created by [Arek Holko](http://holko.pl) ([@arekholko](https://twitter.com/arekholko) on Twitter).
