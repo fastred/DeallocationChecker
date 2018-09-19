@@ -18,9 +18,9 @@ extension UIViewController {
             // We don't check `isBeingDismissed` simply on this view controller because it's common
             // to wrap a view controller in another view controller (e.g. a stock UINavigationController)
             // and present the wrapping view controller instead.
-            if isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
+            if isMovingFromParent || rootParentViewController.isBeingDismissed {
                 let viewControllerType = type(of: self)
-                let disappearanceSource: String = isMovingFromParentViewController ? "removed from its parent" : "dismissed"
+                let disappearanceSource: String = isMovingFromParent ? "removed from its parent" : "dismissed"
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak self] in
                     assert(self == nil, "\(viewControllerType) not deallocated after being \(disappearanceSource)")
