@@ -1,38 +1,81 @@
 import UIKit
 
-extension UIViewController {
+public class DeallocationCheckerManager {
+
+    public typealias Closure = (UIViewController.Type) -> ()
+
+    public enum Handler {
+        case precondition
+        case closure(Closure)
+    }
+
+    public static let shared = DeallocationCheckerManager()
+
+    private(set) var handler: Handler?
+
+    public func setup(with handler: Handler) {
+        self.handler = handler
+    }
 
     /// This method asserts whether a view controller gets deallocated after it disappeared
     /// due to one of these reasons:
     /// - it was removed from its parent, or
     /// - it (or one of its parents) was dismissed.
     ///
+    /// The method calls the `handler` if it's non-nil.
+    ///
     /// **You should call this method only from UIViewController.viewDidDisappear(_:).**
     /// - Parameter delay: Delay after which the check if a
     ///                    view controller got deallocated is performed
-    @objc(dch_checkDeallocationAfterDelay:)
-    public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
-        let rootParentViewController = dch_rootParentViewController
-        
+    @objc(checkDeallocationOf:afterDelay:)
+    public func checkDeallocation(of viewController: UIViewController, afterDelay delay: TimeInterval = 2.0) {
+        #warning("TODO: Add handling of UITabBarController")
+        guard let handler = DeallocationCheckerManager.shared.handler else { return }
+
+        let rootParentViewController = viewController.dch_rootParentViewController
+
         // We don't check `isBeingDismissed` simply on this view controller because it's common
         // to wrap a view controller in another view controller (e.g. a stock UINavigationController)
         // and present the wrapping view controller instead.
-        if isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
-            let viewControllerType = type(of: self)
-            let disappearanceSource: String = isMovingFromParentViewController ? "removed from its parent" : "dismissed"
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak self] in
-                assert(self == nil, "\(viewControllerType) not deallocated after being \(disappearanceSource)")
+        if viewController.isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
+            let viewControllerType = type(of: viewController)
+            let disappearanceSource: String = viewController.isMovingFromParentViewController ? "removed from its parent" : "dismissed"
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak viewController] in
+                guard viewController != nil else { return }
+
+                switch handler {
+                case .precondition:
+                    preconditionFailure("\(viewControllerType) not deallocated after being \(disappearanceSource)")
+                case let .closure(action):
+                    action(viewControllerType)
+                }
             })
         }
     }
 
-    @objc(dch_checkDeallocation)
-    public func objc_dch_checkDeallocation() {
-        self.dch_checkDeallocation()
+    @objc(checkDeallocationWithDefaultDelayOf:)
+    public func checkDeallocationWithDefaultDelay(of viewController: UIViewController) {
+        self.checkDeallocation(of: viewController)
     }
 
-    private var dch_rootParentViewController: UIViewController {
+}
+
+extension UIViewController {
+
+    @available(*, deprecated, message: "Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
+    @objc(dch_checkDeallocationAfterDelay:)
+    public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
+        DeallocationCheckerManager.shared.checkDeallocation(of: self, afterDelay: delay)
+    }
+
+    @available(*, deprecated, message: "Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
+    @objc(dch_checkDeallocation)
+    public func objc_dch_checkDeallocation() {
+        DeallocationCheckerManager.shared.checkDeallocationWithDefaultDelay(of: self)
+    }
+
+    fileprivate var dch_rootParentViewController: UIViewController {
         var root = self
 
         while let parent = root.parent {
