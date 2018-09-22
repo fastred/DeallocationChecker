@@ -42,4 +42,14 @@ class DeallocationCheckerUITests: XCTestCase {
         _ = text.waitForExistence(timeout: 4.0)
         XCTAssert(app.staticTexts["notLeaked"].exists)
     }
+
+    func testNotLeakingWhenSwitchingTab() {
+        app.buttons["Show Leaking"].tap()
+        app.buttons["Second"].tap()
+        let text = app.staticTexts["Leak Status"]
+        let expectatation = self.expectation(for: NSPredicate(format: "exists == true"), evaluatedWith: text, handler: nil)
+        expectatation.isInverted = true
+
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
 }

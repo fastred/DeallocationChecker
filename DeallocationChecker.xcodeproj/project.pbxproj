@@ -19,6 +19,7 @@
 		A6AA7EA521568FC9009D514F /* LeakingObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AA7EA421568FC9009D514F /* LeakingObjCViewController.m */; };
 		A6AA7EAD215690A0009D514F /* DeallocationCheckerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA7EAC215690A0009D514F /* DeallocationCheckerUITests.swift */; };
 		A6AA7EB5215690FB009D514F /* DeallocationChecker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* DeallocationChecker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A6AA7EB8215696F5009D514F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA7EB7215696F5009D514F /* NavigationController.swift */; };
 		A6AC776E21563F2900500C35 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6AC776D21563F2900500C35 /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		A6AA7EAA215690A0009D514F /* DeallocationCheckerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeallocationCheckerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6AA7EAC215690A0009D514F /* DeallocationCheckerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeallocationCheckerUITests.swift; sourceTree = "<group>"; };
 		A6AA7EAE215690A0009D514F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6AA7EB7215696F5009D514F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		A6AC776D21563F2900500C35 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* DeallocationChecker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeallocationChecker.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,9 +155,10 @@
 			children = (
 				A6AA7E7B21568EF0009D514F /* AppDelegate.swift */,
 				A6AA7E9A21568F48009D514F /* LeakingViewController.swift */,
-				A6AA7E9921568F48009D514F /* NotLeakingViewController.swift */,
 				A6AA7EA321568FC9009D514F /* LeakingObjCViewController.h */,
 				A6AA7EA421568FC9009D514F /* LeakingObjCViewController.m */,
+				A6AA7EB7215696F5009D514F /* NavigationController.swift */,
+				A6AA7E9921568F48009D514F /* NotLeakingViewController.swift */,
 				A6AA7E7D21568EF0009D514F /* ViewController.swift */,
 				A6AA7E7F21568EF0009D514F /* Main.storyboard */,
 				A6AA7E8221568EF1009D514F /* Assets.xcassets */,
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6AA7E9C21568F48009D514F /* LeakingViewController.swift in Sources */,
+				A6AA7EB8215696F5009D514F /* NavigationController.swift in Sources */,
 				A6AA7E9B21568F48009D514F /* NotLeakingViewController.swift in Sources */,
 				A6AA7E7E21568EF0009D514F /* ViewController.swift in Sources */,
 				A6AA7E7C21568EF0009D514F /* AppDelegate.swift in Sources */,

@@ -47,10 +47,16 @@ public class DeallocationCheckerManager: NSObject {
     ///                    view controller got deallocated is performed
     @objc(checkDeallocationOf:afterDelay:)
     public func checkDeallocation(of viewController: UIViewController, afterDelay delay: TimeInterval = 2.0) {
-        #warning("TODO: Add handling of UITabBarController")
-        guard let handler = DeallocationCheckerManager.shared.handler else { return }
+        guard let handler = DeallocationCheckerManager.shared.handler else {
+            return
+        }
 
         let rootParentViewController = viewController.dch_rootParentViewController
+
+        // `UITabBarController` keeps a strong reference to view controllers that disappeared from screen. So, we don't have to check if they've been deallocated.
+        guard !rootParentViewController.isKind(of: UITabBarController.self) else {
+            return
+        }
 
         // We don't check `isBeingDismissed` simply on this view controller because it's common
         // to wrap a view controller in another view controller (e.g. a stock UINavigationController)
