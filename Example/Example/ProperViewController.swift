@@ -1,22 +1,18 @@
 //
-//  LeakingViewController.swift
+//  ProperViewController.swift
 //  Example
 //
-//  Created by Arkadiusz Holko on 14/09/2018.
+//  Created by Arkadiusz Holko on 22/09/2018.
 //  Copyright © 2018 Arkadiusz Holko. All rights reserved.
 //
 
 import UIKit
 import DeallocationChecker
 
-private var retained: LeakingViewController?
-
-class LeakingViewController: UIViewController {
+class ProperViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        retained = self
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.navigationController?.popViewController(animated: true)

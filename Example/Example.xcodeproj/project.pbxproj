@@ -15,6 +15,7 @@
 		A63B6CA6214C169800ADDFB6 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B6CA5214C169800ADDFB6 /* ExampleTests.swift */; };
 		A63B6CC2214C16DB00ADDFB6 /* LeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */; };
 		A63B6CC4214C17D700ADDFB6 /* DeallocationChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63B6CB8214C16B700ADDFB6 /* DeallocationChecker.framework */; };
+		A6AC7765215639E300500C35 /* ProperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC7764215639E300500C35 /* ProperViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		A63B6CA7214C169800ADDFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63B6CB0214C16B700ADDFB6 /* DeallocationChecker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeallocationChecker.xcodeproj; path = ../DeallocationChecker.xcodeproj; sourceTree = "<group>"; };
 		A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakingViewController.swift; sourceTree = "<group>"; };
+		A6AC7764215639E300500C35 /* ProperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProperViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				A63B6C90214C169600ADDFB6 /* AppDelegate.swift */,
 				A63B6C92214C169600ADDFB6 /* ViewController.swift */,
 				A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */,
+				A6AC7764215639E300500C35 /* ProperViewController.swift */,
 				A63B6C94214C169600ADDFB6 /* Main.storyboard */,
 				A63B6C97214C169800ADDFB6 /* Assets.xcassets */,
 				A63B6C99214C169800ADDFB6 /* LaunchScreen.storyboard */,
@@ -296,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6AC7765215639E300500C35 /* ProperViewController.swift in Sources */,
 				A63B6C93214C169600ADDFB6 /* ViewController.swift in Sources */,
 				A63B6CC2214C16DB00ADDFB6 /* LeakingViewController.swift in Sources */,
 				A63B6C91214C169600ADDFB6 /* AppDelegate.swift in Sources */,
