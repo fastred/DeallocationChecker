@@ -55,9 +55,9 @@ public class DeallocationCheckerManager: NSObject {
         // We don't check `isBeingDismissed` simply on this view controller because it's common
         // to wrap a view controller in another view controller (e.g. a stock UINavigationController)
         // and present the wrapping view controller instead.
-        if viewController.isMovingFromParentViewController || rootParentViewController.isBeingDismissed {
+        if viewController.isMovingFromParent || rootParentViewController.isBeingDismissed {
             let viewControllerType = type(of: viewController)
-            let disappearanceSource: String = viewController.isMovingFromParentViewController ? "removed from its parent" : "dismissed"
+            let disappearanceSource: String = viewController.isMovingFromParent ? "removed from its parent" : "dismissed"
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak viewController] in
                 let isLeaked = viewController != nil
