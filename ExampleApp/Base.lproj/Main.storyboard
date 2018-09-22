@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rH9-f7-X8i">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="726-Za-mdZ">
+                                <rect key="frame" x="117.5" y="107" width="140" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlH-vE-fQy">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                        <state key="normal" title="Show Leaking"/>
+                                        <connections>
+                                            <segue destination="dCa-1K-S0E" kind="show" id="nBM-WY-0eO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-lT-y8v">
+                                        <rect key="frame" x="0.0" y="38" width="140" height="30"/>
+                                        <state key="normal" title="Show Not Leaking"/>
+                                        <connections>
+                                            <segue destination="NKZ-N4-T3k" kind="show" id="dEo-03-w1S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-LV-0YX">
+                                        <rect key="frame" x="0.0" y="76" width="140" height="30"/>
+                                        <state key="normal" title="Show Leaking Obj-C"/>
+                                        <connections>
+                                            <segue destination="mFy-2B-2t9" kind="show" id="6Pi-JU-V42"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="726-Za-mdZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DCe-Xf-IAa"/>
+                            <constraint firstItem="726-Za-mdZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="MaU-VG-Csr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4PF-Lq-fsA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.2" y="132.68365817091455"/>
+        </scene>
+        <!--Not Leaking View Controller-->
+        <scene sceneID="7PK-uu-BnG">
+            <objects>
+                <viewController id="NKZ-N4-T3k" customClass="NotLeakingViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fB5-nG-xi4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; to pop and check deallocation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-0d-ti1">
+                                <rect key="frame" x="60" y="320.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gsa-0d-ti1" firstAttribute="leading" secondItem="6fZ-ag-LVh" secondAttribute="leading" constant="60" id="FW8-8G-ZTq"/>
+                            <constraint firstItem="gsa-0d-ti1" firstAttribute="centerY" secondItem="6fZ-ag-LVh" secondAttribute="centerY" id="N3f-fG-i9g"/>
+                            <constraint firstItem="6fZ-ag-LVh" firstAttribute="trailing" secondItem="gsa-0d-ti1" secondAttribute="trailing" constant="60" id="oc2-sb-SZk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6fZ-ag-LVh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPx-rC-UP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2772" y="553.67316341829087"/>
+        </scene>
+        <!--Leaking ObjC View Controller-->
+        <scene sceneID="wai-7K-r93">
+            <objects>
+                <viewController id="mFy-2B-2t9" customClass="LeakingObjCViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H5n-8h-To1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; to pop and check deallocation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ix-HD-lJi">
+                                <rect key="frame" x="60" y="320.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4ix-HD-lJi" firstAttribute="centerY" secondItem="ZsO-ME-hlg" secondAttribute="centerY" id="D7L-9a-6jq"/>
+                            <constraint firstItem="4ix-HD-lJi" firstAttribute="leading" secondItem="ZsO-ME-hlg" secondAttribute="leading" constant="60" id="Fdo-kF-XLK"/>
+                            <constraint firstItem="ZsO-ME-hlg" firstAttribute="trailing" secondItem="4ix-HD-lJi" secondAttribute="trailing" constant="60" id="ueW-z2-92S"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZsO-ME-hlg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7t-Oq-X4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2772" y="1224"/>
+        </scene>
+        <!--Leaking View Controller-->
+        <scene sceneID="FOW-fE-9uy">
+            <objects>
+                <viewController id="dCa-1K-S0E" customClass="LeakingViewController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PEI-Yh-Bbt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; to pop and check deallocation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J04-29-f9H">
+                                <rect key="frame" x="60" y="320.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J04-29-f9H" firstAttribute="centerY" secondItem="PRZ-fg-5O6" secondAttribute="centerY" id="Pcg-gp-Mnh"/>
+                            <constraint firstItem="J04-29-f9H" firstAttribute="leading" secondItem="PRZ-fg-5O6" secondAttribute="leading" constant="60" id="RvH-Sc-6EM"/>
+                            <constraint firstItem="PRZ-fg-5O6" firstAttribute="trailing" secondItem="J04-29-f9H" secondAttribute="trailing" constant="60" id="Zmd-FA-Is5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PRZ-fg-5O6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BKx-IL-diM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2772" y="-103.89805097451276"/>
+        </scene>
+        <!--First-->
+        <scene sceneID="vcp-Sp-dWp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iwV-ci-x1S" customClass="NavigationController" customModule="ExampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="First" id="qjj-ha-uzW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VeD-3F-cah">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Pk-zo-LqB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CV0-bT-jZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168.8" y="132.68365817091455"/>
+        </scene>
+        <!--Second-->
+        <scene sceneID="P9K-Cn-edC">
+            <objects>
+                <viewController id="Myp-Qq-XPD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MGm-Fb-5fV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="miT-i7-92z"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Second" id="juW-ra-qad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCB-sg-Oad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="898"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Kq0-le-xFC">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rH9-f7-X8i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IJ8-nL-bJk">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="iwV-ci-x1S" kind="relationship" relationship="viewControllers" id="mLC-41-bWD"/>
+                        <segue destination="Myp-Qq-XPD" kind="relationship" relationship="viewControllers" id="ISd-4O-Gb1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ig-ik-sfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229.59999999999999" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>
