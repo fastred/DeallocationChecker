@@ -28,7 +28,7 @@ static LeakingObjCViewController *retained;
 {
     [super viewDidDisappear:animated];
 
-    [DeallocationCheckerManager.shared checkDeallocationWithDefaultDelayOf:self];
+    [DeallocationChecker.shared checkDeallocationWithDefaultDelayOf:self];
 }
 
 @end

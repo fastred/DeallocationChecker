@@ -14,6 +14,6 @@ class NavigationController: UINavigationController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
-        DeallocationCheckerManager.shared.checkDeallocation(of: self)
+        DeallocationChecker.shared.checkDeallocation(of: self)
     }
 }

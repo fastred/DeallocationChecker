@@ -1,7 +1,7 @@
 import UIKit
 
 @objc
-public class DeallocationCheckerManager: NSObject {
+public class DeallocationChecker: NSObject {
 
     public enum LeakState {
         case leaked
@@ -20,7 +20,7 @@ public class DeallocationCheckerManager: NSObject {
     }
 
     @objc
-    public static let shared = DeallocationCheckerManager()
+    public static let shared = DeallocationChecker()
 
     private(set) var handler: Handler?
 
@@ -28,7 +28,7 @@ public class DeallocationCheckerManager: NSObject {
     /// It is recommended to use DeallocationChecker only in the DEBUG configuration by wrapping this call inside
     /// ```
     /// #if DEBUG
-    ///     DeallocationCheckerManager.shared.setup(with: .alert)
+    ///     DeallocationChecker.shared.setup(with: .alert)
     /// #endif
     /// ```
     /// call.
@@ -50,7 +50,7 @@ public class DeallocationCheckerManager: NSObject {
     ///                    view controller got deallocated is performed
     @objc(checkDeallocationOf:afterDelay:)
     public func checkDeallocation(of viewController: UIViewController, afterDelay delay: TimeInterval = 1.0) {
-        guard let handler = DeallocationCheckerManager.shared.handler else {
+        guard let handler = DeallocationChecker.shared.handler else {
             return
         }
 
@@ -109,18 +109,18 @@ public class DeallocationCheckerManager: NSObject {
 
 extension UIViewController {
 
-    @available(*, deprecated, message: "Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
+    @available(*, deprecated, message: "Please switch to using methods on DeallocationChecker. Also remember to call setup(with:) when your app starts.")
     @objc(dch_checkDeallocationAfterDelay:)
     public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
-        print("Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
-        DeallocationCheckerManager.shared.checkDeallocation(of: self, afterDelay: delay)
+        print("Please switch to using methods on DeallocationChecker. Also remember to call setup(with:) when your app starts.")
+        DeallocationChecker.shared.checkDeallocation(of: self, afterDelay: delay)
     }
 
-    @available(*, deprecated, message: "Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
+    @available(*, deprecated, message: "Please switch to using methods on DeallocationChecker. Also remember to call setup(with:) when your app starts.")
     @objc(dch_checkDeallocation)
     public func objc_dch_checkDeallocation() {
-        print("Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
-        DeallocationCheckerManager.shared.checkDeallocationWithDefaultDelay(of: self)
+        print("Please switch to using methods on DeallocationChecker. Also remember to call setup(with:) when your app starts.")
+        DeallocationChecker.shared.checkDeallocationWithDefaultDelay(of: self)
     }
 
     fileprivate var dch_rootParentViewController: UIViewController {

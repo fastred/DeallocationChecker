@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         #if DEBUG
         if isRunningUnderUITests {
-            DeallocationCheckerManager.shared.setup(with: .callback(makeUITestsCallback()))
+            DeallocationChecker.shared.setup(with: .callback(makeUITestsCallback()))
         } else {
-            DeallocationCheckerManager.shared.setup(with: .alert)
+            DeallocationChecker.shared.setup(with: .alert)
         }
         #endif
 
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    private func makeUITestsCallback() -> DeallocationCheckerManager.Callback {
+    private func makeUITestsCallback() -> DeallocationChecker.Callback {
         return { leakState, _ in
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = UIViewController()

@@ -8,7 +8,7 @@ First, enable the library by calling (for example from your application delegate
 
 ```swift
 #if DEBUG
-    DeallocationCheckerManager.shared.setup(with: .alert) // There are other options than .alert too!
+    DeallocationChecker.shared.setup(with: .alert) // There are other options than .alert too!
 #endif
 ```
 
@@ -18,7 +18,7 @@ Then, in your view controllers **from within `viewDidDisappear(_:) override`**, 
 override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
 
-    DeallocationCheckerManager.shared.checkDeallocation(of: self)
+    DeallocationChecker.shared.checkDeallocation(of: self)
 }
 ```
 
