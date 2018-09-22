@@ -1,18 +1,32 @@
 import UIKit
 
-public class DeallocationCheckerManager {
+@objc
+public class DeallocationCheckerManager: NSObject {
 
     public typealias Closure = (UIViewController.Type) -> ()
 
     public enum Handler {
+        // Leads to preconditionFailure being called when a view controller didn't deallocate.
         case precondition
+        // This closure is called when a view controller didn't deallocate.
         case closure(Closure)
     }
 
+    @objc
     public static let shared = DeallocationCheckerManager()
 
     private(set) var handler: Handler?
 
+    /// Sets up the handler then used in all `checkDeallocation*` methods.
+    /// It is recommended to use DeallocationChecker only in the DEBUG configuration by wrapping this call inside
+    /// ```
+    /// #if DEBUG
+    ///     DeallocationCheckerManager.shared.setup(with: .precondition)
+    /// #endif
+    /// ```
+    /// call.
+    ///
+    /// This method isn't exposed to Obj-C because we use an enumeration that isn't compatible with Obj-C.
     public func setup(with handler: Handler) {
         self.handler = handler
     }

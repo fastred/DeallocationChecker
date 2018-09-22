@@ -16,6 +16,7 @@
 		A63B6CC2214C16DB00ADDFB6 /* LeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */; };
 		A63B6CC4214C17D700ADDFB6 /* DeallocationChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63B6CB8214C16B700ADDFB6 /* DeallocationChecker.framework */; };
 		A6AC7765215639E300500C35 /* ProperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC7764215639E300500C35 /* ProperViewController.swift */; };
+		A6AC776C21563BD700500C35 /* LeakingObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AC776B21563BD700500C35 /* LeakingObjCViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,9 @@
 		A63B6CB0214C16B700ADDFB6 /* DeallocationChecker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeallocationChecker.xcodeproj; path = ../DeallocationChecker.xcodeproj; sourceTree = "<group>"; };
 		A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakingViewController.swift; sourceTree = "<group>"; };
 		A6AC7764215639E300500C35 /* ProperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProperViewController.swift; sourceTree = "<group>"; };
+		A6AC776921563BD700500C35 /* Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6AC776A21563BD700500C35 /* LeakingObjCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeakingObjCViewController.h; sourceTree = "<group>"; };
+		A6AC776B21563BD700500C35 /* LeakingObjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeakingObjCViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +128,14 @@
 				A63B6C90214C169600ADDFB6 /* AppDelegate.swift */,
 				A63B6C92214C169600ADDFB6 /* ViewController.swift */,
 				A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */,
+				A6AC776A21563BD700500C35 /* LeakingObjCViewController.h */,
+				A6AC776B21563BD700500C35 /* LeakingObjCViewController.m */,
 				A6AC7764215639E300500C35 /* ProperViewController.swift */,
 				A63B6C94214C169600ADDFB6 /* Main.storyboard */,
 				A63B6C97214C169800ADDFB6 /* Assets.xcassets */,
 				A63B6C99214C169800ADDFB6 /* LaunchScreen.storyboard */,
 				A63B6C9C214C169800ADDFB6 /* Info.plist */,
+				A6AC776921563BD700500C35 /* Example-Bridging-Header.h */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 				TargetAttributes = {
 					A63B6C8C214C169600ADDFB6 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					A63B6CA0214C169800ADDFB6 = {
 						CreatedOnToolsVersion = 10.0;
@@ -303,6 +311,7 @@
 				A63B6C93214C169600ADDFB6 /* ViewController.swift in Sources */,
 				A63B6CC2214C16DB00ADDFB6 /* LeakingViewController.swift in Sources */,
 				A63B6C91214C169600ADDFB6 /* AppDelegate.swift in Sources */,
+				A6AC776C21563BD700500C35 /* LeakingObjCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNVZW2VES4;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -478,6 +488,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNVZW2VES4;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -496,6 +509,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Example/Example-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

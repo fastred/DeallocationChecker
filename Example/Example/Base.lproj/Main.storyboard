@@ -17,27 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlH-vE-fQy">
-                                <rect key="frame" x="140" y="120" width="95" height="30"/>
-                                <state key="normal" title="Show Leaking"/>
-                                <connections>
-                                    <segue destination="dCa-1K-S0E" kind="show" id="nBM-WY-0eO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-lT-y8v">
-                                <rect key="frame" x="125.5" y="158" width="124" height="30"/>
-                                <state key="normal" title="Show Not Leaking"/>
-                                <connections>
-                                    <segue destination="NKZ-N4-T3k" kind="show" id="dEo-03-w1S"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="726-Za-mdZ">
+                                <rect key="frame" x="117.5" y="107" width="140" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlH-vE-fQy">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="30"/>
+                                        <state key="normal" title="Show Leaking"/>
+                                        <connections>
+                                            <segue destination="dCa-1K-S0E" kind="show" id="nBM-WY-0eO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-lT-y8v">
+                                        <rect key="frame" x="0.0" y="38" width="140" height="30"/>
+                                        <state key="normal" title="Show Not Leaking"/>
+                                        <connections>
+                                            <segue destination="NKZ-N4-T3k" kind="show" id="dEo-03-w1S"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-LV-0YX">
+                                        <rect key="frame" x="0.0" y="76" width="140" height="30"/>
+                                        <state key="normal" title="Show Leaking Obj-C"/>
+                                        <connections>
+                                            <segue destination="mFy-2B-2t9" kind="show" id="6Pi-JU-V42"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="rlH-vE-fQy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="0Is-9w-psa"/>
-                            <constraint firstItem="Kbg-lT-y8v" firstAttribute="top" secondItem="rlH-vE-fQy" secondAttribute="bottom" constant="8" id="DpG-6o-lmR"/>
-                            <constraint firstItem="Kbg-lT-y8v" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="XN0-X4-i3Z"/>
-                            <constraint firstItem="rlH-vE-fQy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x0E-2R-LCP"/>
+                            <constraint firstItem="726-Za-mdZ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="DCe-Xf-IAa"/>
+                            <constraint firstItem="726-Za-mdZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="43" id="MaU-VG-Csr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -61,6 +71,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uPx-rC-UP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1833" y="554"/>
+        </scene>
+        <!--Leaking ObjC View Controller-->
+        <scene sceneID="wai-7K-r93">
+            <objects>
+                <viewController id="mFy-2B-2t9" customClass="LeakingObjCViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H5n-8h-To1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZsO-ME-hlg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K7t-Oq-X4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1833" y="1220"/>
         </scene>
         <!--Leaking View Controller-->
         <scene sceneID="FOW-fE-9uy">
