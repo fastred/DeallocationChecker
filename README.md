@@ -24,7 +24,6 @@ override func viewDidDisappear(_ animated: Bool) {
 
 If a view controller isn’t deallocated after disappearing for good, you'll see a helpful alert:
 
-TODO
 <img src="Resources/leak.png" width="370" height="662" alt="Leaked view controller demo">
 
 At this point we can simply open the [Memory Graph Debugger](https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/special_debugging_workflows.html#//apple_ref/doc/uid/TP40015022-CH9-DontLinkElementID_1) to investigate the reason of a cycle.
