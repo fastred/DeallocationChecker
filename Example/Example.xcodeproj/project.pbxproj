@@ -12,21 +12,16 @@
 		A63B6C96214C169600ADDFB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63B6C94214C169600ADDFB6 /* Main.storyboard */; };
 		A63B6C98214C169800ADDFB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A63B6C97214C169800ADDFB6 /* Assets.xcassets */; };
 		A63B6C9B214C169800ADDFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A63B6C99214C169800ADDFB6 /* LaunchScreen.storyboard */; };
-		A63B6CA6214C169800ADDFB6 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B6CA5214C169800ADDFB6 /* ExampleTests.swift */; };
 		A63B6CC2214C16DB00ADDFB6 /* LeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */; };
 		A63B6CC4214C17D700ADDFB6 /* DeallocationChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63B6CB8214C16B700ADDFB6 /* DeallocationChecker.framework */; };
-		A6AC7765215639E300500C35 /* ProperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC7764215639E300500C35 /* ProperViewController.swift */; };
+		A6AA7E6D215669FF009D514F /* DeallocationChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A63B6CB8214C16B700ADDFB6 /* DeallocationChecker.framework */; };
+		A6AA7E7121566A53009D514F /* DeallocationChecker.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A63B6CB8214C16B700ADDFB6 /* DeallocationChecker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A6AC7765215639E300500C35 /* NotLeakingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC7764215639E300500C35 /* NotLeakingViewController.swift */; };
 		A6AC776C21563BD700500C35 /* LeakingObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6AC776B21563BD700500C35 /* LeakingObjCViewController.m */; };
+		A6AC7777215669C800500C35 /* DeallocationCheckerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC7776215669C800500C35 /* DeallocationCheckerUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A63B6CA2214C169800ADDFB6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A63B6C85214C169600ADDFB6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A63B6C8C214C169600ADDFB6;
-			remoteInfo = Example;
-		};
 		A63B6CB7214C16B700ADDFB6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A63B6CB0214C16B700ADDFB6 /* DeallocationChecker.xcodeproj */;
@@ -62,7 +57,35 @@
 			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
 			remoteInfo = "DeallocationChecker-iOS";
 		};
+		A6AA7E6E21566A1A009D514F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63B6CB0214C16B700ADDFB6 /* DeallocationChecker.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
+			remoteInfo = "DeallocationChecker-iOS";
+		};
+		A6AC7779215669C800500C35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A63B6C85214C169600ADDFB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A63B6C8C214C169600ADDFB6;
+			remoteInfo = Example;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A6AA7E7021566A47009D514F /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A6AA7E7121566A53009D514F /* DeallocationChecker.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A63B6C8D214C169600ADDFB6 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,15 +95,16 @@
 		A63B6C97214C169800ADDFB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A63B6C9A214C169800ADDFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A63B6C9C214C169800ADDFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A63B6CA1214C169800ADDFB6 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A63B6CA5214C169800ADDFB6 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
-		A63B6CA7214C169800ADDFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A63B6CB0214C16B700ADDFB6 /* DeallocationChecker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DeallocationChecker.xcodeproj; path = ../DeallocationChecker.xcodeproj; sourceTree = "<group>"; };
 		A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeakingViewController.swift; sourceTree = "<group>"; };
-		A6AC7764215639E300500C35 /* ProperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProperViewController.swift; sourceTree = "<group>"; };
+		A6AA7E68215669FB009D514F /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		A6AC7764215639E300500C35 /* NotLeakingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotLeakingViewController.swift; sourceTree = "<group>"; };
 		A6AC776921563BD700500C35 /* Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6AC776A21563BD700500C35 /* LeakingObjCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeakingObjCViewController.h; sourceTree = "<group>"; };
 		A6AC776B21563BD700500C35 /* LeakingObjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeakingObjCViewController.m; sourceTree = "<group>"; };
+		A6AC7774215669C800500C35 /* DeallocationCheckerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeallocationCheckerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6AC7776215669C800500C35 /* DeallocationCheckerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeallocationCheckerUITests.swift; sourceTree = "<group>"; };
+		A6AC7778215669C800500C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,10 +116,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63B6C9E214C169800ADDFB6 /* Frameworks */ = {
+		A6AC7771215669C800500C35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6AA7E6D215669FF009D514F /* DeallocationChecker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +132,7 @@
 			children = (
 				A63B6CB0214C16B700ADDFB6 /* DeallocationChecker.xcodeproj */,
 				A63B6C8F214C169600ADDFB6 /* Example */,
-				A63B6CA4214C169800ADDFB6 /* ExampleTests */,
+				A6AC7775215669C800500C35 /* DeallocationCheckerUITests */,
 				A63B6C8E214C169600ADDFB6 /* Products */,
 				A63B6CC3214C17D700ADDFB6 /* Frameworks */,
 			);
@@ -117,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A63B6C8D214C169600ADDFB6 /* Example.app */,
-				A63B6CA1214C169800ADDFB6 /* ExampleTests.xctest */,
+				A6AC7774215669C800500C35 /* DeallocationCheckerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,7 +155,7 @@
 				A63B6CC1214C16DB00ADDFB6 /* LeakingViewController.swift */,
 				A6AC776A21563BD700500C35 /* LeakingObjCViewController.h */,
 				A6AC776B21563BD700500C35 /* LeakingObjCViewController.m */,
-				A6AC7764215639E300500C35 /* ProperViewController.swift */,
+				A6AC7764215639E300500C35 /* NotLeakingViewController.swift */,
 				A63B6C94214C169600ADDFB6 /* Main.storyboard */,
 				A63B6C97214C169800ADDFB6 /* Assets.xcassets */,
 				A63B6C99214C169800ADDFB6 /* LaunchScreen.storyboard */,
@@ -138,15 +163,6 @@
 				A6AC776921563BD700500C35 /* Example-Bridging-Header.h */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		A63B6CA4214C169800ADDFB6 /* ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				A63B6CA5214C169800ADDFB6 /* ExampleTests.swift */,
-				A63B6CA7214C169800ADDFB6 /* Info.plist */,
-			);
-			path = ExampleTests;
 			sourceTree = "<group>";
 		};
 		A63B6CB1214C16B700ADDFB6 /* Products */ = {
@@ -163,8 +179,18 @@
 		A63B6CC3214C17D700ADDFB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A6AA7E68215669FB009D514F /* AVKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6AC7775215669C800500C35 /* DeallocationCheckerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A6AC7776215669C800500C35 /* DeallocationCheckerUITests.swift */,
+				A6AC7778215669C800500C35 /* Info.plist */,
+			);
+			path = DeallocationCheckerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +203,7 @@
 				A63B6C89214C169600ADDFB6 /* Sources */,
 				A63B6C8A214C169600ADDFB6 /* Frameworks */,
 				A63B6C8B214C169600ADDFB6 /* Resources */,
+				A6AA7E7021566A47009D514F /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,23 +215,24 @@
 			productReference = A63B6C8D214C169600ADDFB6 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A63B6CA0214C169800ADDFB6 /* ExampleTests */ = {
+		A6AC7773215669C800500C35 /* DeallocationCheckerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A63B6CAD214C169800ADDFB6 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
+			buildConfigurationList = A6AC7780215669C800500C35 /* Build configuration list for PBXNativeTarget "DeallocationCheckerUITests" */;
 			buildPhases = (
-				A63B6C9D214C169800ADDFB6 /* Sources */,
-				A63B6C9E214C169800ADDFB6 /* Frameworks */,
-				A63B6C9F214C169800ADDFB6 /* Resources */,
+				A6AC7770215669C800500C35 /* Sources */,
+				A6AC7771215669C800500C35 /* Frameworks */,
+				A6AC7772215669C800500C35 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A63B6CA3214C169800ADDFB6 /* PBXTargetDependency */,
+				A6AA7E6F21566A1A009D514F /* PBXTargetDependency */,
+				A6AC777A215669C800500C35 /* PBXTargetDependency */,
 			);
-			name = ExampleTests;
-			productName = ExampleTests;
-			productReference = A63B6CA1214C169800ADDFB6 /* ExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = DeallocationCheckerUITests;
+			productName = DeallocationCheckerUITests;
+			productReference = A6AC7774215669C800500C35 /* DeallocationCheckerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -220,7 +248,7 @@
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1000;
 					};
-					A63B6CA0214C169800ADDFB6 = {
+					A6AC7773215669C800500C35 = {
 						CreatedOnToolsVersion = 10.0;
 						TestTargetID = A63B6C8C214C169600ADDFB6;
 					};
@@ -246,7 +274,7 @@
 			projectRoot = "";
 			targets = (
 				A63B6C8C214C169600ADDFB6 /* Example */,
-				A63B6CA0214C169800ADDFB6 /* ExampleTests */,
+				A6AC7773215669C800500C35 /* DeallocationCheckerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -293,7 +321,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63B6C9F214C169800ADDFB6 /* Resources */ = {
+		A6AC7772215669C800500C35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -307,7 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6AC7765215639E300500C35 /* ProperViewController.swift in Sources */,
+				A6AC7765215639E300500C35 /* NotLeakingViewController.swift in Sources */,
 				A63B6C93214C169600ADDFB6 /* ViewController.swift in Sources */,
 				A63B6CC2214C16DB00ADDFB6 /* LeakingViewController.swift in Sources */,
 				A63B6C91214C169600ADDFB6 /* AppDelegate.swift in Sources */,
@@ -315,26 +343,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A63B6C9D214C169800ADDFB6 /* Sources */ = {
+		A6AC7770215669C800500C35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A63B6CA6214C169800ADDFB6 /* ExampleTests.swift in Sources */,
+				A6AC7777215669C800500C35 /* DeallocationCheckerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A63B6CA3214C169800ADDFB6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A63B6C8C214C169600ADDFB6 /* Example */;
-			targetProxy = A63B6CA2214C169800ADDFB6 /* PBXContainerItemProxy */;
-		};
 		A63B6CC0214C16C700ADDFB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "DeallocationChecker-iOS";
 			targetProxy = A63B6CBF214C16C700ADDFB6 /* PBXContainerItemProxy */;
+		};
+		A6AA7E6F21566A1A009D514F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "DeallocationChecker-iOS";
+			targetProxy = A6AA7E6E21566A1A009D514F /* PBXContainerItemProxy */;
+		};
+		A6AC777A215669C800500C35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A63B6C8C214C169600ADDFB6 /* Example */;
+			targetProxy = A6AC7779215669C800500C35 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -515,45 +548,41 @@
 			};
 			name = Release;
 		};
-		A63B6CAE214C169800ADDFB6 /* Debug */ = {
+		A6AC777B215669C800500C35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNVZW2VES4;
-				INFOPLIST_FILE = ExampleTests/Info.plist;
+				INFOPLIST_FILE = DeallocationCheckerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.ExampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.DeallocationCheckerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
+				TEST_TARGET_NAME = Example;
 			};
 			name = Debug;
 		};
-		A63B6CAF214C169800ADDFB6 /* Release */ = {
+		A6AC777C215669C800500C35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNVZW2VES4;
-				INFOPLIST_FILE = ExampleTests/Info.plist;
+				INFOPLIST_FILE = DeallocationCheckerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.ExampleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.holko.DeallocationCheckerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
+				TEST_TARGET_NAME = Example;
 			};
 			name = Release;
 		};
@@ -578,11 +607,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A63B6CAD214C169800ADDFB6 /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
+		A6AC7780215669C800500C35 /* Build configuration list for PBXNativeTarget "DeallocationCheckerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A63B6CAE214C169800ADDFB6 /* Debug */,
-				A63B6CAF214C169800ADDFB6 /* Release */,
+				A6AC777B215669C800500C35 /* Debug */,
+				A6AC777C215669C800500C35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

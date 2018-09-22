@@ -18,8 +18,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        let callback: DeallocationCheckerManager.Callback = { leakStatus, _ in
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = UIViewController()
+
+            window.alpha = 1
+            window.makeKeyAndVisible()
+
+            let message: String
+            switch leakStatus {
+            case .leaked:
+                message = "leaked"
+            case .notLeaked:
+                message = "notLeaked"
+            }
+
+            let alertController = UIAlertController(title: "Leak Status", message: message, preferredStyle: .alert)
+            alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
+
+            window.rootViewController?.present(alertController, animated: false, completion: nil)
+        }
+
         #if DEBUG
-            DeallocationCheckerManager.shared.setup(with: .precondition)
+            DeallocationCheckerManager.shared.setup(with: .callback(callback))
         #endif
 
         return true

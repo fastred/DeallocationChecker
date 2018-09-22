@@ -17,10 +17,6 @@ class LeakingViewController: UIViewController {
         super.viewDidLoad()
 
         retained = self
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.navigationController?.popViewController(animated: true)
-        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
