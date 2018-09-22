@@ -18,29 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let callback: DeallocationCheckerManager.Callback = { leakStatus, _ in
-            let window = UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = UIViewController()
-
-            window.alpha = 1
-            window.makeKeyAndVisible()
-
-            let message: String
-            switch leakStatus {
-            case .leaked:
-                message = "leaked"
-            case .notLeaked:
-                message = "notLeaked"
-            }
-
-            let alertController = UIAlertController(title: "Leak Status", message: message, preferredStyle: .alert)
-            alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
-
-            window.rootViewController?.present(alertController, animated: false, completion: nil)
-        }
+        let isRunningUnderUITests = ProcessInfo.processInfo.environment["uitests"] != nil
 
         #if DEBUG
-            DeallocationCheckerManager.shared.setup(with: .callback(callback))
+        if isRunningUnderUITests {
+            DeallocationCheckerManager.shared.setup(with: .callback(makeUITestsCallback()))
+        } else {
+            DeallocationCheckerManager.shared.setup(with: .alert)
+        }
         #endif
 
         return true
@@ -68,6 +53,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    private func makeUITestsCallback() -> DeallocationCheckerManager.Callback {
+        return { leakState, _ in
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = UIViewController()
+            window.makeKeyAndVisible()
 
+            let message: String
+            switch leakState {
+            case .leaked:
+                message = "leaked"
+            case .notLeaked:
+                message = "notLeaked"
+            }
+
+            let alertController = UIAlertController(title: "Leak Status", message: message, preferredStyle: .alert)
+            alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
+
+            window.rootViewController?.present(alertController, animated: false, completion: nil)
+        }
+    }
 }
-

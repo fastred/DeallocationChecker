@@ -16,6 +16,9 @@ class DeallocationCheckerUITests: XCTestCase {
         continueAfterFailure = false
 
         app = XCUIApplication()
+        app.launchEnvironment = [
+            "uitests": "true",
+        ]
         app.launch()
     }
 

@@ -3,16 +3,19 @@ import UIKit
 @objc
 public class DeallocationCheckerManager: NSObject {
 
-    public enum LeakedState {
+    public enum LeakState {
         case leaked
         case notLeaked
     }
 
-    public typealias Callback = (LeakedState, UIViewController.Type) -> ()
+    public typealias Callback = (LeakState, UIViewController.Type) -> ()
 
     public enum Handler {
-        // Leads to preconditionFailure being called when a view controller didn't deallocate.
+        /// Shows alert when a leak is detected.
+        case alert
+        /// Calls preconditionFailure when a leak is detected.
         case precondition
+        /// Customization point if you need other type of logging of leak detection, for example to the console or Fabric.
         case callback(Callback)
     }
 
@@ -46,7 +49,7 @@ public class DeallocationCheckerManager: NSObject {
     /// - Parameter delay: Delay after which the check if a
     ///                    view controller got deallocated is performed
     @objc(checkDeallocationOf:afterDelay:)
-    public func checkDeallocation(of viewController: UIViewController, afterDelay delay: TimeInterval = 2.0) {
+    public func checkDeallocation(of viewController: UIViewController, afterDelay delay: TimeInterval = 1.0) {
         guard let handler = DeallocationCheckerManager.shared.handler else {
             return
         }
@@ -66,15 +69,19 @@ public class DeallocationCheckerManager: NSObject {
             let disappearanceSource: String = viewController.isMovingFromParent ? "removed from its parent" : "dismissed"
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak viewController] in
-                let isLeaked = viewController != nil
+                let leakState: LeakState = viewController != nil ? .leaked : .notLeaked
 
                 switch handler {
+                case .alert:
+                    if leakState == .leaked {
+                        self.showAlert(for: viewControllerType)
+                    }
                 case .precondition:
-                    if isLeaked {
+                    if leakState == .leaked {
                         preconditionFailure("\(viewControllerType) not deallocated after being \(disappearanceSource)")
                     }
                 case let .callback(callback):
-                    callback(isLeaked ? .leaked : .notLeaked, viewControllerType)
+                    callback(leakState, viewControllerType)
                 }
             })
         }
@@ -85,6 +92,19 @@ public class DeallocationCheckerManager: NSObject {
         self.checkDeallocation(of: viewController)
     }
 
+    // MARK: - Private
+
+    private func showAlert(for viewController: UIViewController.Type) {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.rootViewController = UIViewController()
+        window.makeKeyAndVisible()
+
+        let message = "\(viewController) is still in memory even though its view was removed from hierarchy. Please open Memory Graph Debugger to find strong references to it."
+        let alertController = UIAlertController(title: "Leak Detected", message: message, preferredStyle: .alert)
+        alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
+
+        window.rootViewController?.present(alertController, animated: false, completion: nil)
+    }
 }
 
 extension UIViewController {
