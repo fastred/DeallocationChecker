@@ -112,12 +112,14 @@ extension UIViewController {
     @available(*, deprecated, message: "Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
     @objc(dch_checkDeallocationAfterDelay:)
     public func dch_checkDeallocation(afterDelay delay: TimeInterval = 2.0) {
+        print("Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
         DeallocationCheckerManager.shared.checkDeallocation(of: self, afterDelay: delay)
     }
 
     @available(*, deprecated, message: "Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
     @objc(dch_checkDeallocation)
     public func objc_dch_checkDeallocation() {
+        print("Please switch to using methods on DeallocationCheckerManager. Also remember to call setup(with:) when your app starts.")
         DeallocationCheckerManager.shared.checkDeallocationWithDefaultDelay(of: self)
     }
 
