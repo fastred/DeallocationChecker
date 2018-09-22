@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 import DeallocationChecker
 
-class UIUtilities<T: UIViewController> {
+class UIStack<T: UIViewController> {
 
     var rootWindow: UIWindow!
 
@@ -62,18 +62,18 @@ private class NotLeakingViewController: UIViewController {
 
 class DeallocationCheckerInNavigationControllerTests: XCTestCase {
 
-    var utilities: UIUtilities<UINavigationController>!
+    var uiStack: UIStack<UINavigationController>!
     private var navigationController: UINavigationController!
 
     override func setUp() {
         super.setUp()
 
-        utilities = UIUtilities()
+        uiStack = UIStack()
         navigationController = UINavigationController(rootViewController: UIViewController())
-        utilities.setupTopLevelUI(withViewController: navigationController)
+        uiStack.setupTopLevelUI(withViewController: navigationController)
     }
 
-    func testLeakedInsideNavigationController() {
+    func testLeaked() {
         let expectation = self.expectation(description: "retained")
 
         var leakedState: DeallocationCheckerManager.LeakedState?
@@ -93,7 +93,7 @@ class DeallocationCheckerInNavigationControllerTests: XCTestCase {
         XCTAssertEqual(leakedState, .leaked)
     }
 
-    func testNotLeakedInsideNavigationController() {
+    func testNotLeaked() {
         let expectation = self.expectation(description: "retained")
 
         var leakedState: DeallocationCheckerManager.LeakedState?
