@@ -28,7 +28,7 @@ public class DeallocationCheckerManager: NSObject {
     /// It is recommended to use DeallocationChecker only in the DEBUG configuration by wrapping this call inside
     /// ```
     /// #if DEBUG
-    ///     DeallocationCheckerManager.shared.setup(with: .precondition)
+    ///     DeallocationCheckerManager.shared.setup(with: .alert)
     /// #endif
     /// ```
     /// call.

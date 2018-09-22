@@ -64,7 +64,20 @@
                     <view key="view" contentMode="scaleToFill" id="fB5-nG-xi4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; to pop and check deallocation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsa-0d-ti1">
+                                <rect key="frame" x="60" y="320.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gsa-0d-ti1" firstAttribute="leading" secondItem="6fZ-ag-LVh" secondAttribute="leading" constant="60" id="FW8-8G-ZTq"/>
+                            <constraint firstItem="gsa-0d-ti1" firstAttribute="centerY" secondItem="6fZ-ag-LVh" secondAttribute="centerY" id="N3f-fG-i9g"/>
+                            <constraint firstItem="6fZ-ag-LVh" firstAttribute="trailing" secondItem="gsa-0d-ti1" secondAttribute="trailing" constant="60" id="oc2-sb-SZk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6fZ-ag-LVh"/>
                     </view>
                 </viewController>
@@ -79,13 +92,26 @@
                     <view key="view" contentMode="scaleToFill" id="H5n-8h-To1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.38431372549999998" green="0.38431372549999998" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; to pop and check deallocation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ix-HD-lJi">
+                                <rect key="frame" x="60" y="320.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4ix-HD-lJi" firstAttribute="centerY" secondItem="ZsO-ME-hlg" secondAttribute="centerY" id="D7L-9a-6jq"/>
+                            <constraint firstItem="4ix-HD-lJi" firstAttribute="leading" secondItem="ZsO-ME-hlg" secondAttribute="leading" constant="60" id="Fdo-kF-XLK"/>
+                            <constraint firstItem="ZsO-ME-hlg" firstAttribute="trailing" secondItem="4ix-HD-lJi" secondAttribute="trailing" constant="60" id="ueW-z2-92S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZsO-ME-hlg"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7t-Oq-X4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="1220"/>
+            <point key="canvasLocation" x="2772" y="1224"/>
         </scene>
         <!--Leaking View Controller-->
         <scene sceneID="FOW-fE-9uy">
@@ -94,7 +120,20 @@
                     <view key="view" contentMode="scaleToFill" id="PEI-Yh-Bbt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap &quot;Back&quot; to pop and check deallocation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J04-29-f9H">
+                                <rect key="frame" x="60" y="320.5" width="255" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J04-29-f9H" firstAttribute="centerY" secondItem="PRZ-fg-5O6" secondAttribute="centerY" id="Pcg-gp-Mnh"/>
+                            <constraint firstItem="J04-29-f9H" firstAttribute="leading" secondItem="PRZ-fg-5O6" secondAttribute="leading" constant="60" id="RvH-Sc-6EM"/>
+                            <constraint firstItem="PRZ-fg-5O6" firstAttribute="trailing" secondItem="J04-29-f9H" secondAttribute="trailing" constant="60" id="Zmd-FA-Is5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PRZ-fg-5O6"/>
                     </view>
                 </viewController>
