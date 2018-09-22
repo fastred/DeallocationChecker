@@ -12,6 +12,7 @@
 		8933C7881EB5B820000D00A4 /* DeallocationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* DeallocationChecker.swift */; };
 		8933C78E1EB5B82C000D00A4 /* DeallocationCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* DeallocationCheckerTests.swift */; };
 		8933C7901EB5B82D000D00A4 /* DeallocationCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7891EB5B82A000D00A4 /* DeallocationCheckerTests.swift */; };
+		A6AC776E21563F2900500C35 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6AC776D21563F2900500C35 /* README.md */; };
 		DD7502921C690C7A006590AF /* DeallocationChecker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* DeallocationChecker.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		52D6D9F01BEFFFBE002C0205 /* DeallocationChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeallocationChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8933C7841EB5B820000D00A4 /* DeallocationChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeallocationChecker.swift; sourceTree = "<group>"; };
 		8933C7891EB5B82A000D00A4 /* DeallocationCheckerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeallocationCheckerTests.swift; sourceTree = "<group>"; };
+		A6AC776D21563F2900500C35 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* DeallocationChecker.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeallocationChecker.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* DeallocationCheckerTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeallocationCheckerTests.plist; sourceTree = "<group>"; };
 		DD75028D1C690C7A006590AF /* DeallocationChecker-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeallocationChecker-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,7 @@
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
+				A6AC776D21563F2900500C35 /* README.md */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
@@ -285,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6AC776E21563F2900500C35 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,13 +3,17 @@ import UIKit
 @objc
 public class DeallocationCheckerManager: NSObject {
 
-    public typealias Closure = (UIViewController.Type) -> ()
+    public enum LeakedState {
+        case leaked
+        case notLeaked
+    }
+
+    public typealias Callback = (LeakedState, UIViewController.Type) -> ()
 
     public enum Handler {
         // Leads to preconditionFailure being called when a view controller didn't deallocate.
         case precondition
-        // This closure is called when a view controller didn't deallocate.
-        case closure(Closure)
+        case callback(Callback)
     }
 
     @objc
@@ -56,13 +60,15 @@ public class DeallocationCheckerManager: NSObject {
             let disappearanceSource: String = viewController.isMovingFromParentViewController ? "removed from its parent" : "dismissed"
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak viewController] in
-                guard viewController != nil else { return }
+                let isLeaked = viewController != nil
 
                 switch handler {
                 case .precondition:
-                    preconditionFailure("\(viewControllerType) not deallocated after being \(disappearanceSource)")
-                case let .closure(action):
-                    action(viewControllerType)
+                    if isLeaked {
+                        preconditionFailure("\(viewControllerType) not deallocated after being \(disappearanceSource)")
+                    }
+                case let .callback(callback):
+                    callback(isLeaked ? .leaked : .notLeaked, viewControllerType)
                 }
             })
         }
