@@ -10,7 +10,6 @@
 		8933C7851EB5B820000D00A4 /* DeallocationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* DeallocationChecker.swift */; };
 		8933C7881EB5B820000D00A4 /* DeallocationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* DeallocationChecker.swift */; };
 		A6AA7E7C21568EF0009D514F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA7E7B21568EF0009D514F /* AppDelegate.swift */; };
-		A6AA7E7E21568EF0009D514F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AA7E7D21568EF0009D514F /* ViewController.swift */; };
 		A6AA7E8121568EF0009D514F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6AA7E7F21568EF0009D514F /* Main.storyboard */; };
 		A6AA7E8321568EF1009D514F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6AA7E8221568EF1009D514F /* Assets.xcassets */; };
 		A6AA7E8621568EF1009D514F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6AA7E8421568EF1009D514F /* LaunchScreen.storyboard */; };
@@ -60,7 +59,6 @@
 		8933C7841EB5B820000D00A4 /* DeallocationChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeallocationChecker.swift; sourceTree = "<group>"; };
 		A6AA7E7921568EF0009D514F /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6AA7E7B21568EF0009D514F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6AA7E7D21568EF0009D514F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6AA7E8021568EF0009D514F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6AA7E8221568EF1009D514F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6AA7E8521568EF1009D514F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 				A6AA7EA421568FC9009D514F /* LeakingObjCViewController.m */,
 				A6AA7EB7215696F5009D514F /* NavigationController.swift */,
 				A6AA7E9921568F48009D514F /* NotLeakingViewController.swift */,
-				A6AA7E7D21568EF0009D514F /* ViewController.swift */,
 				A6AA7E7F21568EF0009D514F /* Main.storyboard */,
 				A6AA7E8221568EF1009D514F /* Assets.xcassets */,
 				A6AA7E8421568EF1009D514F /* LaunchScreen.storyboard */,
@@ -399,7 +396,6 @@
 				A6AA7E9C21568F48009D514F /* LeakingViewController.swift in Sources */,
 				A6AA7EB8215696F5009D514F /* NavigationController.swift in Sources */,
 				A6AA7E9B21568F48009D514F /* NotLeakingViewController.swift in Sources */,
-				A6AA7E7E21568EF0009D514F /* ViewController.swift in Sources */,
 				A6AA7E7C21568EF0009D514F /* AppDelegate.swift in Sources */,
 				A6AA7EA521568FC9009D514F /* LeakingObjCViewController.m in Sources */,
 			);
