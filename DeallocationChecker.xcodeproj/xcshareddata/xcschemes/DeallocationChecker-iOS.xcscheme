@@ -26,16 +26,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      codeCoverageEnabled = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "52D6D9851BEFF229002C0205"
-               BuildableName = "DeallocationChecker-iOS Tests.xctest"
-               BlueprintName = "DeallocationChecker-iOS Tests"
+               BlueprintIdentifier = "A6AA7EA9215690A0009D514F"
+               BuildableName = "DeallocationCheckerUITests.xctest"
+               BlueprintName = "DeallocationCheckerUITests"
                ReferencedContainer = "container:DeallocationChecker.xcodeproj">
             </BuildableReference>
          </TestableReference>
