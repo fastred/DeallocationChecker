@@ -2,6 +2,8 @@
 
 Learn about leaking view controllers without opening Instruments.
 
+[![Build Status](https://travis-ci.com/fastred/DeallocationChecker.svg?branch=master)](https://travis-ci.com/fastred/DeallocationChecker)
+
 ## Usage
 
 First, enable the library by calling (for example from your application delegate):
