@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func makeUITestsCallback() -> DeallocationChecker.Callback {
-        return { leakState, _ in
+        return { leakState, _, _ in
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = UIViewController()
             window.makeKeyAndVisible()
