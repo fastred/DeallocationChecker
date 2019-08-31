@@ -4,9 +4,9 @@ import PackageDescription
 let package = Package(
     name: "DeallocationChecker",
     products: [
-        .library(name: "DeallocationChecker", targets: ["DeallocationChecker-iOS"])
+        .library(name: "DeallocationChecker", targets: ["DeallocationChecker"])
     ],
     targets: [
-        .target(name: "DeallocationChecker-iOS", dependencies: [], path: "Sources")
+        .target(name: "DeallocationChecker", dependencies: [], path: "Sources")
     ]
 )
