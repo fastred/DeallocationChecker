@@ -57,6 +57,7 @@
 		52D6D97C1BEFF229002C0205 /* DeallocationChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeallocationChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* DeallocationChecker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DeallocationChecker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8933C7841EB5B820000D00A4 /* DeallocationChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeallocationChecker.swift; sourceTree = "<group>"; };
+		A6218B4E231ABE550006A2D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		A6AA7E7921568EF0009D514F /* ExampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6AA7E7B21568EF0009D514F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6AA7E8021568EF0009D514F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A6AC776D21563F2900500C35 /* README.md */,
+				A6218B4E231ABE550006A2D0 /* Package.swift */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				A6AA7E7A21568EF0009D514F /* ExampleApp */,
