@@ -94,16 +94,19 @@ public class DeallocationChecker: NSObject {
 
     // MARK: - Private
 
+    private var window: UIWindow? = nil
+
     private func showAlert(for viewController: UIViewController.Type) {
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UIViewController()
-        window.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UIViewController()
+        window?.makeKeyAndVisible()
 
         let message = "\(viewController) is still in memory even though its view was removed from hierarchy. Please open Memory Graph Debugger to find strong references to it."
         let alertController = UIAlertController(title: "Leak Detected", message: message, preferredStyle: .alert)
-        alertController.addAction(.init(title: "OK", style: .cancel, handler: nil))
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: { _ in self.window = nil })
+        alertController.addAction(action)
 
-        window.rootViewController?.present(alertController, animated: false, completion: nil)
+        window?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }
 
