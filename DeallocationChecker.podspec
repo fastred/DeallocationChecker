@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "DeallocationChecker"
-  s.version      = "3.0"
+  s.version      = "3.0.2"
   s.summary      = "Learn about leaking view controllers without opening Instruments."
   s.description  = <<-DESC
     DeallocationChecker asserts that a view controller gets deallocated after
