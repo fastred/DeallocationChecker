@@ -7,8 +7,26 @@ public class DeallocationChecker: NSObject {
         case leaked
         case notLeaked
     }
+  
+    public enum DisappearanceSource: CustomStringConvertible, CustomDebugStringConvertible {
+        case parent
+        case dismissed
+      
+        public var description: String {
+            return self.debugDescription
+        }
+      
+        public var debugDescription: String {
+            switch self {
+            case .parent:
+                return "parent"
+            case .dismissed:
+                return "dismissed"
+            }
+        }
+    }
 
-    public typealias Callback = (LeakState, UIViewController.Type) -> ()
+    public typealias Callback = (LeakState, UIViewController.Type, DisappearanceSource) -> ()
 
     public enum Handler {
         /// Shows alert when a leak is detected.
@@ -66,7 +84,7 @@ public class DeallocationChecker: NSObject {
         // and present the wrapping view controller instead.
         if viewController.isMovingFromParent || rootParentViewController.isBeingDismissed {
             let viewControllerType = type(of: viewController)
-            let disappearanceSource: String = viewController.isMovingFromParent ? "removed from its parent" : "dismissed"
+            let disappearanceSource: DisappearanceSource = viewController.isMovingFromParent ? .parent : .dismissed
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak viewController] in
                 let leakState: LeakState = viewController != nil ? .leaked : .notLeaked
@@ -78,10 +96,10 @@ public class DeallocationChecker: NSObject {
                     }
                 case .precondition:
                     if leakState == .leaked {
-                        preconditionFailure("\(viewControllerType) not deallocated after being \(disappearanceSource)")
+                        preconditionFailure("\(viewControllerType) not deallocated after being \(disappearanceSource == .parent ? "removed from its parent" : "dismissed")")
                     }
                 case let .callback(callback):
-                    callback(leakState, viewControllerType)
+                    callback(leakState, viewControllerType, disappearanceSource)
                 }
             })
         }
